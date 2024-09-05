@@ -1,7 +1,8 @@
 import Encryption from "@/components/main/Encryption";
+import Footer from "@/components/main/Footer";
 import Hero from "@/components/main/Hero";
+import Projects from "@/components/main/Projects";
 import Skills from "@/components/main/Skills";
-
 export default function Home() {
   return (
     <main className="w-full h-full bg-[#030014]">
@@ -9,6 +10,8 @@ export default function Home() {
         <Hero />
         <Skills />
         <Encryption />
+        <Projects />
+        <Footer />
       </div>
     </main>
   );
