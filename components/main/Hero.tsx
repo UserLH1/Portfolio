@@ -6,7 +6,7 @@ function Hero() {
         autoPlay
         muted
         loop
-        className="rotate-180 absolute top-[-320px] left-0 z-[1] w-full h-full object-cover"
+        className="rotate-180 absolute left-0 z-[1] w-full object-cover sm:top-[-150px] md:top-[-220px] lg:top-[-300px] xl:top-[-500px] top-[-50px]"
       >
         <source src="/blackhole.webm" type="video/webm"></source>
       </video>

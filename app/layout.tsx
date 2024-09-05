@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-gradient-to-b from-[#10052f]  to-black z-5 overflow-y-scroll overflow-x-hidden`}
+        className={`${inter.className} bg-gradient-to-b from-[#030014] to-black z-5 overflow-y-scroll overflow-x-hidden`}
       >
         {" "}
         <StarsCanvas />
