@@ -36,7 +36,7 @@ const Navbar = () => {
             </a>
           </div>
         </div>
-        <div className="flex flex-row gap-5 hover:scale-50">
+        <div className="flex flex-row gap-5 ">
           {Socials.map((social) => (
             <a
               href={social.link}
