@@ -1,3 +1,4 @@
+
 export const Skill_data = [
     {
       skill_name: "Html 5",
@@ -80,19 +81,25 @@ export const Skill_data = [
   
   ];
   
-  export const Socials = [
+export const Socials = [
+   {
+      name: "Linkedin",
+      src: "/linkedin.png",
+      link: "https://www.linkedin.com/in/horatiu-lazea-1a4b8b1b4/",
+      
+  },
     {
-      name: "Discord",
-      src: "/instagram.svg",
-    },
-    {
-      name: "Facebook",
-      src: "/facebook.svg",
+      name: "GitHub",
+      src: "/github.png",
+      link:"https://github.com/UserLH1"
     },
     {
       name: "Instagram",
-      src: "/discord.svg",
+      src: "/instagram.svg",
+      link: "https://www.instagram.com/horatiu_lazea/",
     },
+   
+
   ];
   
   

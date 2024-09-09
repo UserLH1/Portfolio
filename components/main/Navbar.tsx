@@ -10,18 +10,18 @@ const Navbar = () => {
           className=" flex flex-row items-center h-auto w-auto"
         >
           <Image
-            src="/next.png"
+            src="/&.png"
             alt="logo"
-            width={50}
-            height={50}
+            width={80}
+            height={80}
             className="cursor-pointer hover:animate-pulse mx-3"
           />
-          <div className="font-bold ml-[10px] hidden md:block text-gray-300">
-            Horatiu Lazea Next Developer
+          <div className=" font-semibold ml-[10px] hidden md:block text-gray-300 font-fira">
+            Horaţiu Lazea
           </div>
         </a>
         <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20">
-          <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
+          <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200 font-fira">
             <a href="#about-me" className="cursor-pointer">
               About Me
             </a>
@@ -31,17 +31,26 @@ const Navbar = () => {
             <a href="#projects" className="cursor-pointer">
               Projects
             </a>
+            <a href="#contact" className="cursor-pointer">
+              Contact
+            </a>
           </div>
         </div>
-        <div className="flex flex-row gap-5">
+        <div className="flex flex-row gap-5 hover:scale-50">
           {Socials.map((social) => (
-            <Image
-              src={social.src}
-              alt={social.name}
+            <a
+              href={social.link}
+              target="_blank"
+              rel="noopener noreferrer"
               key={social.name}
-              height={25}
-              width={25}
-            ></Image>
+            >
+              <Image
+                src={social.src}
+                alt={social.name}
+                height={25}
+                width={25}
+              />
+            </a>
           ))}
         </div>
       </div>
