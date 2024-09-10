@@ -49,13 +49,14 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-2xl text-gray-400 my-2 max-w-[600px]"
         >
-          Check out my projects to see what I can do as a web stack developer!
+          Check out my projects to see what I can do as a web developer!
         </motion.h3>
         <motion.a
           variants={slideInFromLeft(1)}
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+          href="#contact"
         >
-          Learn More !
+          Get in touch
         </motion.a>
       </div>
       <motion.div

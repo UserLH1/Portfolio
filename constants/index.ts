@@ -85,7 +85,7 @@ export const Socials = [
    {
       name: "Linkedin",
       src: "/linkedin.png",
-      link: "https://www.linkedin.com/in/horatiu-lazea-1a4b8b1b4/",
+      link: "https://www.linkedin.com/in/horatiu-lazea-a52314255/",
       
   },
     {

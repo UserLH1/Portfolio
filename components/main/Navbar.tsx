@@ -12,9 +12,9 @@ const Navbar = () => {
           <Image
             src="/&.png"
             alt="logo"
-            width={80}
-            height={80}
-            className="cursor-pointer hover:animate-pulse mx-3"
+            width={90}
+            height={90}
+            className="cursor-pointer hover:scale-110 mx-3"
           />
           <div className=" font-semibold ml-[10px] hidden md:block text-gray-300 font-fira">
             Horaţiu Lazea
@@ -22,16 +22,19 @@ const Navbar = () => {
         </a>
         <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20">
           <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200 font-fira">
-            <a href="#about-me" className="cursor-pointer">
+            <a
+              href="#about-me"
+              className="cursor-pointer hover:text-gray-400  "
+            >
               About Me
             </a>
-            <a href="#skills" className="cursor-pointer">
+            <a href="#skills" className="cursor-pointer hover:text-gray-400">
               Skills
             </a>
-            <a href="#projects" className="cursor-pointer">
+            <a href="#projects" className="cursor-pointer hover:text-gray-400">
               Projects
             </a>
-            <a href="#contact" className="cursor-pointer">
+            <a href="#contact" className="cursor-pointer hover:text-gray-400">
               Contact
             </a>
           </div>
@@ -43,6 +46,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               key={social.name}
+              className="hover:scale-110 "
             >
               <Image
                 src={social.src}
