@@ -1,3 +1,4 @@
+import { SignupFormDemo as Contact2 } from "@/components/main/Contact2";
 import Encryption from "@/components/main/Encryption";
 import Footer from "@/components/main/Footer";
 import Hero from "@/components/main/Hero";
@@ -11,6 +12,7 @@ export default function Home() {
         <Skills />
         <Encryption />
         <Projects />
+        <Contact2 />
         <Footer />
       </div>
     </main>
