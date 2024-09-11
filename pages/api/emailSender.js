@@ -4,7 +4,7 @@ require("dotenv").config();
 
 async function handler(req, res) {
   if (req.method === "POST") {
-    const { name, email, message } = req.body;
+    const { firstname, lastname, email, message } = req.body;
 
     // Configurarea clientului OAuth2
     const oAuth2Client = new google.auth.OAuth2(
@@ -16,7 +16,7 @@ async function handler(req, res) {
     // Setarea tokenului de reîmprospătare
     oAuth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
 
-    async function sendContactEmail(name, email, message) {
+    async function sendContactEmail(firstname, lastname, email, message) {
       console.log("sending ContactEmail");
       try {
         // Obține tokenul de acces
@@ -43,7 +43,7 @@ async function handler(req, res) {
           html: `
                         <div style="font-family: Arial, sans-serif; color: #444;">
                           <h1 style="color: #0d6efd;">Contact Form Submission</h1>
-                          <h2>Message from ${name}</h2>
+                          <h2>Message from ${firstname} ${lastname}</h2>
                           <p><strong>Email:</strong> ${email}</p>
                           <p><strong>Message:</strong></p>
                           <p>${message}</p>
@@ -54,17 +54,15 @@ async function handler(req, res) {
         // Trimiterea emailului
         await transport.sendMail(mailOptions);
 
-        return res.status(200).json({ message: "Email trimis cu succes!" });
+        return res.status(200).json({ message: "Email sent with succes!" });
       } catch (error) {
         console.log("Error sending email:", error);
-        return res
-          .status(500)
-          .json({ error: "Eroare la trimiterea emailului." });
+        return res.status(500).json({ error: "Error sending email." });
       }
     }
 
     // Apelează funcția pentru a trimite emailul
-    await sendContactEmail(name, email, message);
+    await sendContactEmail(firstname, lastname, email, message);
   } else {
     // Dacă metoda nu este POST, returnează 405 Method Not Allowed
     return res.status(405).json({ message: "Method Not Allowed" });

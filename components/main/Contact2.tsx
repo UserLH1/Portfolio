@@ -1,16 +1,54 @@
 "use client";
 import { cn } from "@/utils/utils";
-import React from "react";
+import React, { useState } from "react";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
-
+import { Textarea } from "../ui/textarea";
 export function SignupFormDemo() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    message: "",
+  });
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+    console.log("form data: " + formData);
+  };
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log("Form submitted");
+
+    try {
+      const response = await fetch("/api/emailSender", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data: { message: string; error: string } = await response.json();
+
+      if (response.status === 200) {
+        setSuccessMessage(data.message);
+        setErrorMessage("");
+        setFormData({ firstname: "", lastname: "", email: "", message: "" });
+      } else {
+        setErrorMessage(data.error);
+      }
+    } catch (error) {
+      setErrorMessage("There was an error sending the email.");
+    }
   };
   return (
-    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-[linear-gradient(180deg,rgba(38,0,77,0.2),rgba(0,0,0,0.2))] z-40">
+    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-[linear-gradient(180deg,rgba(38,0,77,0.2),rgba(0,0,0,0.2))]   z-40">
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Contact me
       </h2>
@@ -22,16 +60,51 @@ export function SignupFormDemo() {
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer>
             <Label htmlFor="firstname">First name</Label>
-            <Input id="firstname" placeholder="Tyler" type="text" />
+            <Input
+              name="firstname"
+              value={formData.firstname}
+              onChange={handleChange}
+              id="firstname"
+              placeholder="John"
+              type="text"
+            />
           </LabelInputContainer>
           <LabelInputContainer>
             <Label htmlFor="lastname">Last name</Label>
-            <Input id="lastname" placeholder="Durden" type="text" />
+            <Input
+              name="lastname"
+              value={formData.lastname}
+              onChange={handleChange}
+              id="lastname"
+              placeholder="Cena"
+              type="text"
+            />
           </LabelInputContainer>
         </div>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Email Address</Label>
-          <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
+          <Input
+            name="email"
+            value={formData.email}
+            id="email"
+            placeholder="youremailadress@gmail.com"
+            type="email"
+            onChange={handleChange}
+            required
+          />
+        </LabelInputContainer>
+
+        <LabelInputContainer className="mb-4">
+          <Label htmlFor="message">Message</Label>
+          <Textarea
+            className=""
+            name="message"
+            value={formData.message}
+            id="message"
+            placeholder="Let's work together!"
+            onChange={handleChange}
+            required
+          />
         </LabelInputContainer>
 
         <button
@@ -41,6 +114,10 @@ export function SignupFormDemo() {
           Send
           <BottomGradient />
         </button>
+        {successMessage && (
+          <p className="mt-4 text-green-500">{successMessage}</p>
+        )}
+        {errorMessage && <p className="mt-4 text-red-500">{errorMessage}</p>}
 
         <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
 
