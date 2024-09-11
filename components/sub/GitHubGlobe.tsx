@@ -396,6 +396,12 @@ export function GitHubGlobe() {
   return (
     <div className="flex items-center justify-center w-full h-full relative">
       <div className="w-full md:w-[700px] mx-auto relative overflow-hidden h-[400px] md:h-[40rem] px-4">
+        {/* <h2 className="text-center text-xl md:text-4xl font-bold text-black dark:text-white">
+          Get in touch
+        </h2>
+        <p className="text-center text-base md:text-lg font-normal mt-6 text-neutral-700 dark:text-neutral-200 max-w-md  mx-auto">
+          Contact me for global colaboration
+        </p> */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
