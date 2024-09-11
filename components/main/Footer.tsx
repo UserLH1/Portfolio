@@ -36,13 +36,19 @@ const Footer = () => {
           </div>
           <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
             <p className="flex flex-row items-center my-[15px] cursor-pointer hover:bg-sky-700 z-30"></p>
-            <Image
-              src="/&.png"
-              alt="logo"
-              width={150}
-              height={150}
-              className="cursor-pointer hover:animate-pulse mx-3"
-            />
+            <a
+              href="#about-me"
+              className=" flex flex-row items-center h-auto w-auto"
+            >
+              <Image
+                src="/&.png"
+                alt="logo"
+                width={120}
+                height={120}
+                className="cursor-pointer hover:scale-110 mx-3"
+              />
+              <div className=" font-semibold ml-[10px] hidden md:block text-gray-300 font-fira"></div>
+            </a>
           </div>
         </div>
 

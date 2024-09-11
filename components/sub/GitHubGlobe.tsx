@@ -27,7 +27,7 @@ export function GitHubGlobe() {
     maxRings: 3,
     initialPosition: { lat: 22.3193, lng: 114.1694 },
     autoRotate: true,
-    autoRotateSpeed: 0.5,
+    autoRotateSpeed: 0.9,
   };
   const colors = ["#06b6d4", "#3b82f6", "#6366f1"];
   const sampleArcs = [
@@ -394,31 +394,16 @@ export function GitHubGlobe() {
   ];
 
   return (
-    <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto relative ">
-      <div className="max-w-4xl mx-auto relative overflow-hidden md:h-[40rem] px-4">
+    <div className="flex items-center justify-center w-full h-full relative">
+      <div className="w-full md:w-[700px] mx-auto relative overflow-hidden h-[400px] md:h-[40rem] px-4">
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 1,
-          }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
           className="div"
-        >
-          <h2 className="text-center text-xl md:text-4xl font-bold text-black dark:text-white">
-            Providing worldwide services
-          </h2>
-          <p className="text-center text-base md:text-lg font-normal text-neutral-700 dark:text-neutral-200  mt-2 mx-auto">
-            This globe is interactive and customizable. Have fun with it, and
-            don&apos;t forget to share it.
-          </p>
-        </motion.div>
-        <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
+        ></motion.div>
+
+        <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b from-transparent pointer-events-none select-none z-40" />
         <div className="absolute w-full -bottom-20 h-72 md:h-full z-10">
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>

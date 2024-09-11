@@ -48,18 +48,13 @@ export function ContactForm() {
     }
   };
   return (
-    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-[linear-gradient(180deg,rgba(38,0,77,0.2),rgba(0,0,0,0.2))]   z-40">
-      <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
-        Contact me
-      </h2>
-      <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
-        Get in touch with me for any queries or project ideas.
-      </p>
-
+    <div className="mt-24 max-w-lg md:max-w-xl w-full mx-auto rounded-none md:rounded-2xl p-6 md:p-10 shadow-input bg-[linear-gradient(180deg,rgba(38,0,77,0.2),rgba(0,0,0,0.2))] z-40">
       <form className="my-8" onSubmit={handleSubmit}>
-        <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
+        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mb-6">
           <LabelInputContainer>
-            <Label htmlFor="firstname">First name</Label>
+            <Label className="text-lg md:text-base" htmlFor="firstname">
+              First name
+            </Label>
             <Input
               name="firstname"
               value={formData.firstname}
@@ -67,10 +62,13 @@ export function ContactForm() {
               id="firstname"
               placeholder="John"
               type="text"
+              className="h-12 text-lg"
             />
           </LabelInputContainer>
           <LabelInputContainer>
-            <Label htmlFor="lastname">Last name</Label>
+            <Label className="text-lg md:text-base" htmlFor="lastname">
+              Last name
+            </Label>
             <Input
               name="lastname"
               value={formData.lastname}
@@ -78,26 +76,33 @@ export function ContactForm() {
               id="lastname"
               placeholder="Cena"
               type="text"
+              className="h-12 text-lg"
             />
           </LabelInputContainer>
         </div>
-        <LabelInputContainer className="mb-4">
-          <Label htmlFor="email">Email Address</Label>
+
+        <LabelInputContainer className="mb-6">
+          <Label className="text-lg md:text-base" htmlFor="email">
+            Email Address
+          </Label>
           <Input
             name="email"
             value={formData.email}
             id="email"
-            placeholder="youremailadress@gmail.com"
+            placeholder="youremailaddress@gmail.com"
             type="email"
+            className="h-12 text-lg"
             onChange={handleChange}
             required
           />
         </LabelInputContainer>
 
-        <LabelInputContainer className="mb-4">
-          <Label htmlFor="message">Message</Label>
+        <LabelInputContainer className="mb-6">
+          <Label className="text-lg md:text-base" htmlFor="message">
+            Message
+          </Label>
           <Textarea
-            className=""
+            className="h-24 text-lg"
             name="message"
             value={formData.message}
             id="message"
@@ -108,20 +113,17 @@ export function ContactForm() {
         </LabelInputContainer>
 
         <button
-          className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+          className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-12 text-lg font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
           type="submit"
         >
           Send
           <BottomGradient />
         </button>
+
         {successMessage && (
           <p className="mt-4 text-green-500">{successMessage}</p>
         )}
         {errorMessage && <p className="mt-4 text-red-500">{errorMessage}</p>}
-
-        <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
-
-        <div className="flex flex-col space-y-4"></div>
       </form>
     </div>
   );
