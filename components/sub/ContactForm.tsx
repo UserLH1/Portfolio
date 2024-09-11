@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
-export function SignupFormDemo() {
+export function ContactForm() {
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
