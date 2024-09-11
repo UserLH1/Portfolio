@@ -1,6 +1,5 @@
 const { google } = require("googleapis");
 const nodemailer = require("nodemailer");
-require("dotenv").config();
 
 async function handler(req, res) {
   if (req.method === "POST") {
