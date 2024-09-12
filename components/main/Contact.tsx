@@ -27,7 +27,10 @@ const Contact = () => {
         </div>
 
         {/* Formularul de contact */}
-        <div className="flex justify-center items-center w-full md:w-auto mt-10 md:mt-0 relative z-10">
+        <div
+          className="flex justify-center items-center w-full md:w-auto mt-10 md:mt-0 relative z-10"
+          id="contact"
+        >
           {" "}
           {/* Am adăugat `relative` și `z-10` pentru control */}
           <ContactForm />
