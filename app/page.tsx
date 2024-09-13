@@ -7,7 +7,7 @@ import Skills from "@/components/main/Skills";
 export default function Home() {
   return (
     <main className="w-full h-full bg-[#030014]">
-      <div className="flex flex-col gap-20 ">
+      <div className="flex flex-col md:gap-20 ">
         <Hero />
         <Skills />
         <Encryption />

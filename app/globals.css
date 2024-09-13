@@ -26,10 +26,9 @@
   align-items: center;
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
-  border-radius: 32px;
+  border-radius: 30px;
   box-shadow: inset 0 -7px 11px #a48fff1f;
   display: flex;
-
   position: relative;
   width: -moz-max-content;
   width: max-content;
@@ -103,7 +102,7 @@ li {
 
 ul {
   position: absolute;
-   width: 70%;  
+   width: 80%;  
    height: 100%;
  
 }

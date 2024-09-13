@@ -48,7 +48,7 @@ export function ContactForm() {
     }
   };
   return (
-    <div className="mt-24 max-w-lg md:max-w-xl w-full mx-auto rounded-none md:rounded-2xl p-6 md:p-10 shadow-input bg-[linear-gradient(180deg,rgba(38,0,77,0.2),rgba(0,0,0,0.2))] z-40">
+    <div className="mt-24 max-w-lg md:max-w-xl w-full mx-auto rounded-none md:rounded-2xl p-6 md:p-10 shadow-input bg-[rgba(38,0,77,0.2)] z-40">
       <form className="my-8" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mb-6">
           <LabelInputContainer>

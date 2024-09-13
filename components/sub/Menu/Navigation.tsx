@@ -24,7 +24,7 @@ export const Navigation = ({ isOpen }: { isOpen: boolean }) => (
       initial="closed"
       animate={isOpen ? "open" : "closed"}
       className={`absolute top-[65px] left-[0.1px] text-white h-max font-semibold text-lg transition-all duration-300 ${
-        isOpen ? "bg-[#03001487] backdrop-blur-md z-50" : "bg-transparent"
+        isOpen ? "bg-[#03001487] backdrop-blur-md z-50" : "hidden"
       }`}
     >
       <div className="pt-5 pb-[100vh]">

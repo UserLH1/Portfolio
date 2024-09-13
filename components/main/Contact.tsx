@@ -7,7 +7,7 @@ const Contact = () => {
       {" "}
       {/* Am adăugat `relative` pentru control asupra poziționării */}
       {/* Containerul pentru titlu și paragraf */}
-      <div className="relative z-40 mt-[200px] mb-[-150px]">
+      <div className="relative z-40 mt-[40px] md:mt-[80px] mb-[-150px]">
         {" "}
         {/* `z-40` pentru a aduce secțiunea în față și `mt-[200px]` pentru distanță */}
         <h2 className="text-center text-xl md:text-4xl font-bold text-black dark:text-white">
