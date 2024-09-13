@@ -11,11 +11,14 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-10">
+    <div className="align-middle w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#030014ce] md:bg-[#03001441] md:backdrop-blur-md z-50 px-10">
+      <div className=" md:hidden relative bottom-2 right-7">
+        <Menu />
+      </div>
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
         <a
           href="#about-me"
-          className="flex flex-row items-center h-auto w-auto"
+          className="flex flex-row items-center h-auto w-auto  "
         >
           <Image
             src="/&.png"
@@ -29,9 +32,6 @@ const Navbar = () => {
           </div>
         </a>
 
-        <div className="md:hidden">
-          <Menu />
-        </div>
         <div
           className={`w-[500px] h-full flex flex-col md:flex-row items-center justify-between md:mr-20 md:block ${
             isOpen ? "block" : "hidden"
