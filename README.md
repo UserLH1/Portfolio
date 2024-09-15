@@ -10,7 +10,7 @@ I'm Horatiu Lazea, a passionate developer with a strong interest in web technolo
 Feel free to explore my portfolio and contact me if you have any project ideas or collaboration opportunities!
 
 - **Website**: [horatiulazea.com](https://horatiulazea.com)
-- **Email**: contact@horatiulazea.com
+- **Email**: lazeahoratiu@gmail.com
 
 ---
 
@@ -127,7 +127,7 @@ The portfolio is hosted using **Vercel**. If you'd like to deploy it yourself, y
 
 ## Contact
 
-Feel free to reach out to me at **contact@horatiulazea.com** or through my [LinkedIn](https://linkedin.com/in/horatiulazea) profile if you'd like to collaborate or have any questions.
+Feel free to reach out to me at **lazeahoratiu@gmail.com** or through my [LinkedIn](https://www.linkedin.com/in/horatiu-lazea-a52314255/) profile if you'd like to collaborate or have any questions.
 
 ---
 
