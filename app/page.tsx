@@ -8,6 +8,7 @@ import Head from "next/head";
 
 export default function Home() {
   const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+  console.log("GA_ID:", GA_ID);
 
   return (
     <>
@@ -17,6 +18,7 @@ export default function Home() {
           name="description"
           content="I'm Horatiu Lazea, a Full-Stack Developer with expertise in React, Next.js, and Node.js. Check out my projects and skills."
         />
+
         <meta
           name="keywords"
           content="Full-Stack Developer, React, Next.js, Node.js, Portfolio, Web Development, JavaScript"
