@@ -49,9 +49,9 @@ const HeroContent = () => {
           variants={slideInFromLeft}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          I'm a student who loves building websites and software, both front-end
-          and back-end. I'm really into web design and enjoy turning ideas into
-          beautiful, easy-to-use sites.
+          I&apos;m a student who loves building websites and software, both
+          front-end and back-end. I&apos;m really into web design and enjoy
+          turning ideas into beautiful, easy-to-use sites.
         </motion.p>
         <motion.h3
           variants={slideInFromLeft}
