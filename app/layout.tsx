@@ -1,13 +1,19 @@
 // app/layout.tsx
 
 import Navbar from "@/components/main/Navbar";
-import StarsCanvas from "@/components/ui/StarBackground";
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+
+// Dynamically import StarsCanvas
+const StarsCanvas = dynamic(() => import("@/components/ui/StarBackground"), {
+  ssr: false,
+  loading: () => null,
+});
 
 export const metadata: Metadata = {
   title: "Horatiu Lazea | Full-Stack Developer Portfolio",
@@ -40,7 +46,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Move the viewport configuration out of metadata and export it separately
+// Export the viewport configuration separately
 export const viewport = {
   width: "device-width",
   initialScale: 1,
@@ -76,6 +82,7 @@ export default function RootLayout({
             </Script>
           </>
         )}
+        {/* Use the dynamically imported StarsCanvas */}
         <StarsCanvas />
         <Navbar />
         {children}

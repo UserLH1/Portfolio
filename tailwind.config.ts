@@ -22,6 +22,7 @@ module.exports = {
     },
     fontFamily: {
       fira: ["Fira Code"],
+      display: 'swap'
     },
    
   },
