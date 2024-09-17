@@ -1,5 +1,4 @@
 import { ContactForm } from "../sub/ContactForm";
-import { GitHubGlobe } from "../sub/GitHubGlobe";
 
 const Contact = () => {
   return (
@@ -23,7 +22,6 @@ const Contact = () => {
         <div className="flex justify-center md:justify-end w-full md:w-auto md:ml-[-50px] relative z-10">
           {" "}
           {/* Am adăugat `relative` și `z-10` pentru control */}
-          <GitHubGlobe />
         </div>
 
         {/* Formularul de contact */}

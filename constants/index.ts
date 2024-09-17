@@ -36,12 +36,7 @@ export const Skill_data = [
       width: 80,
       height: 80,
     },
-    {
-      skill_name: "React Query",
-      Image: "/reactquery.png",
-      width: 80,
-      height: 80,
-    },
+
     {
       skill_name: "Type Script",
       Image: "/ts.png",
@@ -54,12 +49,7 @@ export const Skill_data = [
       width: 80,
       height: 80,
     },
-    {
-      skill_name: "Framer Motion",
-      Image: "/framer.png",
-      width: 80,
-      height: 80,
-    },
+
     {
       skill_name: "Stripe Payment",
       Image: "/stripe.webp",
@@ -148,8 +138,8 @@ export const Socials = [
       height: 80,
     },
     {
-      skill_name: "React Query",
-      Image: "/reactquery.png",
+      skill_name: "Framer Motion",
+      Image: "/framer.png",
       width: 80,
       height: 80,
     },
@@ -180,6 +170,12 @@ export const Socials = [
       width: 80,
       height: 80,
     },
+        {
+      skill_name: "SpringBoot",
+      Image: "/spring.png",
+      width: 70,
+      height: 70,
+    },
     {
       skill_name: "Mongo db",
       Image: "/mongodb.png",
@@ -204,12 +200,7 @@ export const Socials = [
       width: 70,
       height: 70,
     },
-    {
-      skill_name: "Prisma",
-      Image: "/prisma.webp",
-      width: 70,
-      height: 70,
-    },
+
     {
       skill_name: "Graphql",
       Image: "/graphql.png",
@@ -220,14 +211,14 @@ export const Socials = [
   
   export const Full_stack = [
     {
-      skill_name: "React Native",
-      Image: "/ReactNative .png",
+      skill_name: "Vite",
+      Image: "/vite.png",
       width: 70,
       height: 70,
     },
     {
-      skill_name: "Tauri",
-      Image: "/tauri.svg",
+      skill_name: "Electron",
+      Image: "/electron.png",
       width: 70,
       height: 70,
     },
@@ -251,8 +242,8 @@ export const Socials = [
   
   export const Other_skill = [
     {
-      skill_name: "Go",
-      Image: "/go.png",
+      skill_name: "Ethereum",
+      Image: "/eth.png",
       width: 60,
       height: 60,
     },
