@@ -10,7 +10,7 @@ interface Props {
 }
 const AnimatedCard = ({ src, title, description, image, link }: Props) => {
   return (
-    <div className="h-auto w-[full] flex items-center justify-center ">
+    <div className="h-auto w-[full] flex items-center justify-center m-1">
       <PinContainer title={link} href={src}>
         <div className="flex  flex-col  tracking-tight text-slate-100/50 sm:basis-1/2 w-[20vw] ">
           <Image

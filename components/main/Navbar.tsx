@@ -37,7 +37,7 @@ const Navbar = () => {
             isOpen ? "block" : "hidden"
           }`}
         >
-          <div className="flex flex-col md:flex-row items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200 font-fira">
+          <div className="mt-2 flex flex-col md:flex-row items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200 font-fira">
             <a href="#about-me" className="cursor-pointer hover:text-gray-400">
               About Me
             </a>
