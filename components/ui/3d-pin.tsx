@@ -20,15 +20,15 @@ export const PinContainer: React.FC<PinContainerProps> = ({
   containerClassName,
 }) => {
   const [transform, setTransform] = useState<string>(
-    "translate(-50%,-50%) rotateX(0deg) scale(1.3)"
+    "translate(-50%,-50%) rotateX(0deg) scale(1.1)"
   );
 
   const onMouseEnter = () => {
-    setTransform("translate(-50%,-50%) rotateX(40deg) scale(1)");
+    setTransform("translate(-50%,-50%) rotateX(40deg) scale(0.9)");
   };
 
   const onMouseLeave = () => {
-    setTransform("translate(-50%,-50%) rotateX(0deg) scale(1.3)");
+    setTransform("translate(-50%,-50%) rotateX(0deg) scale(1.1)");
   };
 
   return (
@@ -123,10 +123,10 @@ export const PinPerspective: React.FC<PinPerspectiveProps> = ({
         </div>
 
         <>
-          <motion.div className="absolute right-1/2 bottom-1/2 bg-gradient-to-b from-transparent to-violet-500 translate-y-[14px] w-px h-20 group-hover/pin:h-40 blur-[2px]" />
-          <motion.div className="absolute right-1/2 bottom-1/2 bg-gradient-to-b from-transparent to-violet-500 translate-y-[14px] w-px h-20 group-hover/pin:h-40" />
-          <motion.div className="absolute right-1/2 translate-x-[1.5px] bottom-1/2 bg-violet-600 translate-y-[14px] w-[4px] h-[4px] rounded-full z-40 blur-[3px]" />
-          <motion.div className="absolute right-1/2 translate-x-[0.5px] bottom-1/2 bg-violet-300 translate-y-[14px] w-[2px] h-[2px] rounded-full z-40" />
+          <motion.div className="absolute right-1/2 bottom-1/2 bg-gradient-to-b from-transparent to-violet-600 translate-y-[14px] w-px h-20 group-hover/pin:h-40 blur-[2px]" />
+          <motion.div className="absolute right-1/2 bottom-1/2 bg-gradient-to-b from-transparent to-violet-600 translate-y-[14px] w-px h-20 group-hover/pin:h-40" />
+          <motion.div className="absolute right-1/2 translate-x-[1.5px] bottom-1/2 bg-violet-700 translate-y-[14px] w-[4px] h-[4px] rounded-full z-40 blur-[3px]" />
+          <motion.div className="absolute right-1/2 translate-x-[0.5px] bottom-1/2 bg-violet-700 translate-y-[14px] w-[2px] h-[2px] rounded-full z-40" />
         </>
       </div>
     </motion.div>
