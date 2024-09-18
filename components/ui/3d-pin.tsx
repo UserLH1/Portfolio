@@ -34,7 +34,7 @@ export const PinContainer: React.FC<PinContainerProps> = ({
   return (
     <Link
       className={cn(
-        "relative group/pin z-40 cursor-pointer overflow-hidden rounded-lg shadow-lg ",
+        "relative z-40 cursor-pointer rounded-lg shadow-lg group/pin border !p-0",
         containerClassName
       )}
       target="_blank"
@@ -53,7 +53,7 @@ export const PinContainer: React.FC<PinContainerProps> = ({
           style={{
             transform: transform,
           }}
-          className="absolute left-1/2  top-1/2 flex justify-start items-start rounded-2xl shadow-[0_8px_16px_rgb(0_0_0/0.4)] bg-[#25134b69] border border-[#2A0E61]  transition-transform duration-700 overflow-hidden"
+          className="absolute left-1/2  top-1/2 flex justify-stretch items-stretch rounded-2xl shadow-[0_8px_16px_rgb(0_0_0/0.4)]  border border-[#2f1e6e]  transition-transform duration-700 overflow-hidden"
         >
           <div className={cn("relative z-40", className)}>{children}</div>
         </motion.div>
