@@ -6,7 +6,6 @@ import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-
 const inter = Inter({ subsets: ["latin"] });
 
 // Dynamically import StarsCanvas
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "../public/portfolio.png",
       },
     ],
   },

@@ -3,7 +3,7 @@ import { Socials } from "../../constants/index";
 
 const Footer = () => {
   return (
-    <div className="w-full h-full text-gray-200 shadow-lg p-4 md:p-6 shadow-[#2A0E61]/50 bg-[linear-gradient(180deg,rgba(38,0,77,0.2),rgba(0,0,0,0.2))] backdrop-blur-sm z-50">
+    <div className="w-full h-full text-gray-200 shadow-lg p-4 md:p-6 shadow-[#2A0E61]/50 bg-[linear-gradient(180deg,rgba(38,0,77,0.2),rgba(0,0,0,0.2))] backdrop-blur-sm z-10">
       <div className="w-full flex flex-col md:flex-row items-center justify-between m-auto max-w-7xl">
         {/* Logo Section */}
         <div className="flex flex-row items-center">

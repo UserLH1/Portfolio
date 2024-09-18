@@ -1,9 +1,11 @@
 "use client";
-import { cn } from "@/utils/utils";
-import React, { useState } from "react";
+import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
+
 export function ContactForm() {
   const [formData, setFormData] = useState({
     firstname: "",
@@ -11,8 +13,7 @@ export function ContactForm() {
     email: "",
     message: "",
   });
-  const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
@@ -20,10 +21,11 @@ export function ContactForm() {
       ...formData,
       [name]: value,
     });
-    console.log("form data: " + formData);
   };
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    setLoading(true); // Activează loading
 
     try {
       const response = await fetch("/api/emailSender", {
@@ -34,19 +36,21 @@ export function ContactForm() {
         body: JSON.stringify(formData),
       });
 
-      const data: { message: string; error: string } = await response.json();
+      const data = await response.json();
 
       if (response.status === 200) {
-        setSuccessMessage(data.message);
-        setErrorMessage("");
+        toast.success("Message sent successfully!");
         setFormData({ firstname: "", lastname: "", email: "", message: "" });
       } else {
-        setErrorMessage(data.error);
+        toast.error(data.error || "Something went wrong.");
       }
     } catch (error) {
-      setErrorMessage("There was an error sending the email.");
+      toast.error("There was an error sending the email.");
+    } finally {
+      setLoading(false); // Dezactivează loading
     }
   };
+
   return (
     <div className="mt-24 max-w-lg md:max-w-xl w-full mx-auto rounded-none md:rounded-2xl p-6 md:p-10 shadow-input bg-[rgba(38,0,77,0.2)] z-40">
       <form className="my-8" onSubmit={handleSubmit}>
@@ -113,22 +117,55 @@ export function ContactForm() {
         </LabelInputContainer>
 
         <button
-          className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-12 text-lg font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+          className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-12 text-lg font-medium shadow-md"
           type="submit"
+          disabled={loading}
         >
-          Send
+          {loading ? (
+            <div className="flex justify-center items-center">
+              <svg
+                className="animate-spin h-5 w-5 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v8H4z"
+                ></path>
+              </svg>
+              <span className="ml-2">Sending...</span>
+            </div>
+          ) : (
+            "Send"
+          )}
           <BottomGradient />
         </button>
-
-        {successMessage && (
-          <p className="mt-4 text-green-500">{successMessage}</p>
-        )}
-        {errorMessage && <p className="mt-4 text-red-500">{errorMessage}</p>}
       </form>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 }
-
 const BottomGradient = () => {
   return (
     <>
@@ -137,7 +174,6 @@ const BottomGradient = () => {
     </>
   );
 };
-
 const LabelInputContainer = ({
   children,
   className,
@@ -146,7 +182,7 @@ const LabelInputContainer = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex flex-col space-y-2 w-full", className)}>
+    <div className={`flex flex-col space-y-2 w-full ${className}`}>
       {children}
     </div>
   );
