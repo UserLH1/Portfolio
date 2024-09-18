@@ -1,7 +1,6 @@
 // app/page.tsx
 
 import Contact from "@/components/main/Contact";
-import Encryption from "@/components/main/Encryption";
 import Footer from "@/components/main/Footer";
 import Hero from "@/components/main/Hero";
 import Projects from "@/components/main/Projects";
@@ -13,7 +12,7 @@ export default function Home() {
       <div className="flex flex-col md:gap-20 ">
         <Hero />
         <Skills />
-        <Encryption />
+
         <Projects />
         <Contact />
         <Footer />
