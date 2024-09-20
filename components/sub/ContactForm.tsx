@@ -99,7 +99,7 @@ export function ContactForm() {
             name="email"
             value={formData.email}
             id="email"
-            placeholder="youremailaddress@gmail.com"
+            placeholder="john.cena@gmail.com"
             type="email"
             className="h-12 p-3 rounded-lg text-lg bg-gray-900 border border-gray-700 focus:ring-2 focus:ring-purple-500"
             onChange={handleChange}
