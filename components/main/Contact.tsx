@@ -12,7 +12,7 @@ const Contact = () => {
         {" "}
         {/* `z-40` pentru a aduce secțiunea în față și `mt-[200px]` pentru distanță */}
         <div className="text-4xl mx-auto font-normal text-center md:text-left text-neutral-600 dark:text-neutral-400 mb-10 md:mb-0 w-full md:w-1/2 relative  ">
-          Let's build something{" "}
+          Let&apos;s build something{" "}
           <span className="text-indigo-500">
             <span className="text-gradient">
               <FlipWords words={words} />
