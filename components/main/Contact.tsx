@@ -26,7 +26,7 @@ const Contact = () => {
 
         {/* Formularul de contact */}
         <div
-          className="flex justify-center items-center w-full md:w-auto mt-10 md:mt-0 relative z-10"
+          className="flex justify-center items-center w-full md:w-auto mt-10 md:mt-0 relative z-10 "
           id="contact"
         >
           {" "}

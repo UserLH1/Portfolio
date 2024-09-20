@@ -25,7 +25,7 @@ export function ContactForm() {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    setLoading(true); // Activează loading
+    setLoading(true); // Enable loading
 
     try {
       const response = await fetch("/api/emailSender", {
@@ -47,16 +47,19 @@ export function ContactForm() {
     } catch (error) {
       toast.error("There was an error sending the email.");
     } finally {
-      setLoading(false); // Dezactivează loading
+      setLoading(false); // Disable loading
     }
   };
 
   return (
-    <div className="mt-24 max-w-lg md:max-w-xl w-full mx-auto rounded-none md:rounded-2xl p-6 md:p-10 shadow-input bg-[rgba(38,0,77,0.2)] z-40">
-      <form className="my-8" onSubmit={handleSubmit}>
-        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mb-6">
+    <div className="mt-24 max-w-lg md:max-w-xl w-full mx-auto rounded-lg p-8 shadow-xl bg-[#1f293772] z-40">
+      <form className="my-8 space-y-6" onSubmit={handleSubmit}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <LabelInputContainer>
-            <Label className="text-lg md:text-base" htmlFor="firstname">
+            <Label
+              className="text-lg md:text-base text-gray-300"
+              htmlFor="firstname"
+            >
               First name
             </Label>
             <Input
@@ -66,11 +69,14 @@ export function ContactForm() {
               id="firstname"
               placeholder="John"
               type="text"
-              className="h-12 text-lg"
+              className="h-12 p-3 rounded-lg text-lg bg-gray-900 border border-gray-700 focus:ring-2 focus:ring-purple-500"
             />
           </LabelInputContainer>
           <LabelInputContainer>
-            <Label className="text-lg md:text-base" htmlFor="lastname">
+            <Label
+              className="text-lg md:text-base text-gray-300"
+              htmlFor="lastname"
+            >
               Last name
             </Label>
             <Input
@@ -80,13 +86,13 @@ export function ContactForm() {
               id="lastname"
               placeholder="Cena"
               type="text"
-              className="h-12 text-lg"
+              className="h-12 p-3 rounded-lg text-lg bg-gray-900 border border-gray-700 focus:ring-2 focus:ring-purple-500"
             />
           </LabelInputContainer>
         </div>
 
-        <LabelInputContainer className="mb-6">
-          <Label className="text-lg md:text-base" htmlFor="email">
+        <LabelInputContainer>
+          <Label className="text-lg md:text-base text-gray-300" htmlFor="email">
             Email Address
           </Label>
           <Input
@@ -95,18 +101,21 @@ export function ContactForm() {
             id="email"
             placeholder="youremailaddress@gmail.com"
             type="email"
-            className="h-12 text-lg"
+            className="h-12 p-3 rounded-lg text-lg bg-gray-900 border border-gray-700 focus:ring-2 focus:ring-purple-500"
             onChange={handleChange}
             required
           />
         </LabelInputContainer>
 
-        <LabelInputContainer className="mb-6">
-          <Label className="text-lg md:text-base" htmlFor="message">
+        <LabelInputContainer>
+          <Label
+            className="text-lg md:text-base text-gray-300"
+            htmlFor="message"
+          >
             Message
           </Label>
           <Textarea
-            className="h-24 text-lg"
+            className="h-24 p-3 rounded-lg text-lg bg-gray-900 border border-gray-700 focus:ring-2 focus:ring-purple-500"
             name="message"
             value={formData.message}
             id="message"
@@ -117,7 +126,9 @@ export function ContactForm() {
         </LabelInputContainer>
 
         <button
-          className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-12 text-lg font-medium shadow-md"
+          className={`bg-[#9233eaa4] hover:bg-[#9333ea] w-full py-3 text-white rounded-lg shadow-md transition-all duration-300 ${
+            loading ? "cursor-not-allowed opacity-50" : ""
+          }`}
           type="submit"
           disabled={loading}
         >
@@ -148,7 +159,6 @@ export function ContactForm() {
           ) : (
             "Send"
           )}
-          <BottomGradient />
         </button>
       </form>
       <ToastContainer
@@ -166,24 +176,7 @@ export function ContactForm() {
     </div>
   );
 }
-const BottomGradient = () => {
-  return (
-    <>
-      <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
-      <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
-    </>
-  );
-};
-const LabelInputContainer = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <div className={`flex flex-col space-y-2 w-full ${className}`}>
-      {children}
-    </div>
-  );
+
+const LabelInputContainer = ({ children }: { children: React.ReactNode }) => {
+  return <div className="flex flex-col space-y-2">{children}</div>;
 };

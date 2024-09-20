@@ -9,7 +9,8 @@ const Projects = () => {
       <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
         My Projects
       </h1>
-      <div className="h-full w-full flex flex-wrap items-center justify-center   ">
+      {/* Use grid for 3 columns layout */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full px-10">
         <AnimatedCard
           src="https://github.com/UserLH1/PI"
           link="github.com/UserLH1/PI"

@@ -44,7 +44,7 @@ const StarBackground: React.FC = () => {
 };
 
 const StarsCanvas: React.FC = () => (
-  <div className="w-full h-auto fixed inset-0 z-[20]">
+  <div className="w-full h-auto fixed inset-0 z-[0]">
     <Canvas
       camera={{ position: [0, 0, 1] }}
       gl={{ antialias: false }}
