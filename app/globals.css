@@ -74,10 +74,12 @@ html {
   left: 0;
   bottom: 0;
   width: 300px;
-  
- 
+  }
+.text-gradient {
+  font-weight: 700;
+  background: linear-gradient(to right, #8a2be2, #4a90e2); /* Your gradient colors */
+  -webkit-background-clip: text;
 }
-
 .nav-button {
   border: none;
   cursor: pointer;
