@@ -4,18 +4,21 @@ const Contact = () => {
   const words = ["amazing", "creative", "innovative", "professional"];
 
   return (
-    <div className="z-30 relative">
+    <div className="z-30 relative px-4">
       {" "}
       {/* Am adăugat `relative` pentru control asupra poziționării */}
       {/* Containerul pentru titlu și paragraf */}
-      <div className="relative z-40 mt-[5vh] md:mt-[15vh] mb-[-150px] md:flex items-center justify-center">
+      <div className=" relative z-40 mt-[5vh] md:mt-[15vh] mb-[-150px] md:flex items-center justify-center">
         {" "}
         {/* `z-40` pentru a aduce secțiunea în față și `mt-[200px]` pentru distanță */}
-        <div className="text-4xl mx-auto font-normal text-center md:text-left text-neutral-600 dark:text-neutral-400 mb-10 md:mb-0 w-full md:w-1/2 relative  ">
+        <div className="text-4xl  font-normal text-center justify-center items-center  text-neutral-600 dark:text-neutral-400 mb-10 md:mb-0 w-full md:w-1/2 relative  ">
           Let&apos;s build something{" "}
           <span className="text-indigo-500">
-            <span className="text-gradient">
+            <span className="text-gradient hidden md:inline">
               <FlipWords words={words} />
+            </span>
+            <span className="text-gradient md:hidden">
+            professional
             </span>
           </span>{" "}
           together.
