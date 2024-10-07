@@ -52,7 +52,7 @@ export function ContactForm() {
   };
 
   return (
-    <div className="mt-24 max-w-lg md:max-w-xl w-full mx-auto rounded-lg p-8 shadow-xl bg-[#1f293772] z-40">
+    <div className="mt-24 max-w-lg md:max-w-xl w-full  rounded-lg p-8 shadow-xl bg-[#1f293772] z-40">
       <form className="my-8 space-y-6" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <LabelInputContainer>
