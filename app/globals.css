@@ -77,7 +77,7 @@ html {
   }
 .text-gradient {
   font-weight: 700;
-  background: linear-gradient(to right, #8a2be2, #4a90e2); /* Your gradient colors */
+  background: linear-gradient(to right, #6d399d, #4a90e2); /* Your gradient colors */
   -webkit-background-clip: text;
 }
 .nav-button {

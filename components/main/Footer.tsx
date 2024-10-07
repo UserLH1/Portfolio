@@ -1,4 +1,7 @@
+// components/Footer.js
+
 import Image from "next/image";
+import Link from "next/link"; // Importă Link din next/link
 import { Socials } from "../../constants/index";
 
 const Footer = () => {
@@ -44,9 +47,18 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Copyright Section */}
-        <div className="mt-4 md:mt-0 text-sm text-center md:text-right">
-          &copy; {new Date().getFullYear()} Horatiu Lazea. All rights reserved.
+        {/* Copyright & Privacy Policy Section */}
+        <div className="mt-4 md:mt-0 text-sm text-center md:text-right space-y-2">
+          <div>
+            &copy; {new Date().getFullYear()} Horatiu Lazea. All rights
+            reserved.
+          </div>
+          <Link
+            href="/privacy-policy"
+            className="text-gray-300 hover:text-gray-100 underline"
+          >
+            Privacy Policy
+          </Link>
         </div>
       </div>
     </div>
