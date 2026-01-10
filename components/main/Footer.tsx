@@ -50,7 +50,7 @@ const Footer = () => {
         {/* Copyright & Privacy Policy Section */}
         <div className="mt-4 md:mt-0 text-sm text-center md:text-right space-y-2">
           <div>
-            &copy; {new Date().getFullYear()} Horatiu Lazea. All rights
+            &copy; 2026 Horatiu Lazea. All rights
             reserved.
           </div>
           <Link
