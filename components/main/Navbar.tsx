@@ -1,67 +1,74 @@
 "use client";
+
 import Image from "next/image";
-import { useState } from "react";
 import { Socials } from "../../constants/index";
 import { Menu } from "../sub/Menu/Menu";
+
+const navLinks = [
+  { label: "About Me",   href: "#about-me"  },
+  { label: "Skills",     href: "#skills"    },
+  { label: "Experience", href: "#experience"},
+  { label: "Projects",   href: "#projects"  },
+  { label: "Contact",    href: "#contact"   },
+];
+
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false); // State pentru meniul mobil
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen); // Schimbă starea meniului (deschis/închis)
-  };
-
   return (
-    <div className="align-middle w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#030014ce] md:bg-[#03001441] md:backdrop-blur-md z-50 px-10">
-      <div className=" md:hidden relative bottom-2 right-7 ml-2">
+    <nav
+      aria-label="Main navigation"
+      className="align-middle w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#030014ce] md:bg-[#03001441] md:backdrop-blur-md z-50 px-10"
+    >
+      {/* Mobile hamburger menu */}
+      <div className="md:hidden relative bottom-2 right-7 ml-2">
         <Menu />
       </div>
+
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
+
+        {/* Logo */}
         <a
           href="#about-me"
-          className="flex flex-row items-center h-auto w-auto  "
+          aria-label="Horatiu Lazea – back to top"
+          className="flex flex-row items-center h-auto w-auto"
         >
           <Image
             src="/&.png"
-            alt="logo"
+            alt="Horatiu Lazea logo"
             width={90}
             height={90}
-            className="cursor-pointer hover:scale-110 mx-3"
+            className="cursor-pointer hover:scale-110 mx-3 transition-transform duration-200"
           />
-          <div className="font-semibold ml-[10px] hidden md:block text-gray-300 font-fira">
+          <span className="font-semibold ml-[10px] hidden md:block text-gray-300 font-fira">
             Horaţiu Lazea
-          </div>
+          </span>
         </a>
 
-        <div
-          className={`w-[500px] h-full flex flex-col md:flex-row items-center justify-between md:mr-20 md:block ${
-            isOpen ? "block" : "hidden"
-          }`}
-        >
-          <div className="mt-2 flex flex-col md:flex-row items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200 font-fira">
-            <a href="#about-me" className="cursor-pointer hover:text-gray-400">
-              About Me
-            </a>
-            <a href="#skills" className="cursor-pointer hover:text-gray-400">
-              Skills
-            </a>
-            <a href="#projects" className="cursor-pointer hover:text-gray-400">
-              Projects
-            </a>
-            <a href="#contact" className="cursor-pointer hover:text-gray-400">
-              Contact
-            </a>
+        {/* Desktop nav links */}
+        <div className="hidden md:flex items-center">
+          <div className="flex flex-row items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200 font-fira gap-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="cursor-pointer hover:text-purple-400 transition-colors duration-200 text-sm"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
         </div>
 
-        {/* Social Media Icons */}
-        <div className="flex flex-row gap-5">
+        {/* Right side: social icons + Resume button */}
+        <div className="hidden md:flex flex-row items-center gap-4">
+          {/* Social icons */}
           {Socials.map((social) => (
             <a
+              key={social.name}
               href={social.link}
               target="_blank"
               rel="noopener noreferrer"
-              key={social.name}
-              className="hover:scale-110 "
+              aria-label={`Visit ${social.name} profile`}
+              className="hover:scale-110 transition-transform duration-200"
             >
               <Image
                 src={social.src}
@@ -71,9 +78,21 @@ const Navbar = () => {
               />
             </a>
           ))}
+
+          {/*
+           * TODO: make sure your CV file is at /public/Horatiu_Lazea_CV.pdf
+           */}
+          <a
+            href="/Horatiu_Lazea_CV.pdf"
+            download
+            aria-label="Download resume PDF"
+            className="ml-2 py-1.5 px-4 text-sm button-primary text-white rounded-full border border-[#7042f861] hover:border-purple-500 transition-all duration-300"
+          >
+            Resume
+          </a>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
