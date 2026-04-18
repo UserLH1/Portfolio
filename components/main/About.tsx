@@ -9,9 +9,9 @@ import { AiOutlineUser } from "react-icons/ai";
 // TODO: Update all stats with your real numbers
 // ─────────────────────────────────────────────
 const stats = [
-  { value: "3+",  label: "Years coding"        },
+  { value: "4+",  label: "Years coding"        },
   { value: "10+", label: "Projects delivered"  },
-  { value: "15+", label: "Technologies mastered" },
+  { value: "10+", label: "Technologies mastered" },
 ];
 
 const About = () => {
