@@ -118,8 +118,9 @@ const About = () => {
              * TODO: add your CV to /public/Horatiu_Lazea_CV.pdf
              */}
             <a
-              href="/Horatiu_Lazea_CV.pdf"
-              download
+              href="/final_resume.pdf"
+              target="_blank" 
+              rel="noopener noreferrer"
               className="py-2 px-6 border border-[#7042f861] text-gray-300 hover:text-white hover:border-purple-500 rounded-lg transition-all duration-300"
             >
               Download CV

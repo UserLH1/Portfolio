@@ -79,8 +79,9 @@ const HeroContent = () => {
            * The file will be automatically served by Next.js from /public.
            */}
           <a
-            href="/Horatiu_Lazea_CV.pdf"
-            download
+            href="/final_resume.pdf"
+            target="_blank" 
+            rel="noopener noreferrer"
             className="py-2 px-6 flex items-center gap-2 border border-[#7042f861] text-gray-300 hover:text-white hover:border-purple-500 cursor-pointer rounded-lg transition-all duration-300"
           >
             <HiDownload className="h-5 w-5" />

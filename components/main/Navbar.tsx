@@ -83,8 +83,9 @@ const Navbar = () => {
            * TODO: make sure your CV file is at /public/Horatiu_Lazea_CV.pdf
            */}
           <a
-            href="/Horatiu_Lazea_CV.pdf"
-            download
+            href="/final_resume.pdf"
+            target="_blank" 
+            rel="noopener noreferrer"
             aria-label="Download resume PDF"
             className="ml-2 py-1.5 px-4 text-sm button-primary text-white rounded-full border border-[#7042f861] hover:border-purple-500 transition-all duration-300"
           >
