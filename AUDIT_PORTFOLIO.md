@@ -203,13 +203,7 @@ twitter: {
 - Formularul de contact: `firstname` si `lastname` nu au `required`
 - Alt text-urile la skill icons sunt generice
 
-### 4.5 Instagram link in portofoliu profesional
 
-**Problema:** Instagram-ul personal intr-un portofoliu profesional poate fi o distragere. Angajatorii vor LinkedIn si GitHub.
-
-**Solutie:** Inlocuieste Instagram cu un link catre un blog tehnic, Stack Overflow, sau profil Dev.to. Daca vrei sa pastrezi Instagram, asigura-te ca are continut profesional/tech.
-
----
 
 ## 5. CE LIPSESTE COMPLET (Diferentiatori)
 

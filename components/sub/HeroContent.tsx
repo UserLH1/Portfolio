@@ -39,7 +39,7 @@ const HeroContent = () => {
           </span>
         </motion.div>
 
-        {/* Bio — professional, no "student" */}
+        {/* Bio  professional, no "student" */}
         <motion.p
           variants={slideInFromLeft}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
@@ -48,9 +48,9 @@ const HeroContent = () => {
            * TODO: Personalize this bio with your own words.
            * Keep it professional and specific to your actual experience.
            */}
-          Full-Stack Developer passionate about turning ideas into clean,
-          performant applications. I work across the full stack — from pixel-perfect
-          React UIs to robust Node.js and Spring Boot APIs.
+          Young developer passionate about turning ideas into clean,
+          performant applications. I work across the full stack  from pixel-perfect
+          React UIs to robust Node.js and Spring Boot backends.
         </motion.p>
 
         {/* Sub-headline */}
@@ -96,7 +96,7 @@ const HeroContent = () => {
       >
         <Image
           src="/mainIconsdark.svg"
-          alt="Full-Stack Developer — React, Node.js, TypeScript icons"
+          alt="Full-Stack Developer  React, Node.js, TypeScript icons"
           height={650}
           width={650}
         />

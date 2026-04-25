@@ -9,8 +9,8 @@ import { AiOutlineUser } from "react-icons/ai";
 // TODO: Update all stats with your real numbers
 // ─────────────────────────────────────────────
 const stats = [
-  { value: "4+",  label: "Years coding"        },
-  { value: "10+", label: "Projects delivered"  },
+  { value: "4+", label: "Years coding" },
+  { value: "10+", label: "Projects delivered" },
   { value: "10+", label: "Technologies mastered" },
 ];
 
@@ -51,6 +51,11 @@ const About = () => {
            * will be shown automatically.
            */}
           <div className="relative w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden border-2 border-purple-500/40 shadow-lg shadow-purple-900/30">
+            {/* Gradient fallback shown when photo is missing */}
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-800 to-blue-900 flex items-center justify-center">
+              <span className="text-5xl font-bold text-white/80 select-none">HL</span>
+            </div>
+
             <Image
               src="/profile.jpg"            // TODO: replace with your photo
               alt="Horatiu Lazea – Full-Stack Developer"
@@ -61,10 +66,6 @@ const About = () => {
                 (e.target as HTMLImageElement).style.display = "none";
               }}
             />
-            {/* Gradient fallback shown when photo is missing */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-800 to-blue-900 flex items-center justify-center">
-              <span className="text-5xl font-bold text-white/80 select-none">HL</span>
-            </div>
           </div>
         </motion.div>
 
@@ -91,7 +92,7 @@ const About = () => {
           <p className="text-gray-400 text-lg leading-relaxed">
             I&apos;m a Full-Stack Developer with a strong foundation in both
             frontend and backend technologies. I love building products that
-            are not only functional but also a pleasure to use — clean interfaces
+            are not only functional but also a pleasure to use  clean interfaces
             backed by reliable, well-structured code.
           </p>
           <p className="text-gray-400 text-lg leading-relaxed">
@@ -126,6 +127,7 @@ const About = () => {
           </div>
         </motion.div>
       </div>
+      <br></br>
 
       {/* ── Stats row ─────────────────────────────────────── */}
       <motion.div
@@ -137,7 +139,7 @@ const About = () => {
       >
         {stats.map((stat) => (
           <div key={stat.label} className="flex flex-col items-center gap-1">
-            <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
+            <span className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
               {stat.value}
             </span>
             <span className="text-gray-400 text-sm text-center">{stat.label}</span>

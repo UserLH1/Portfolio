@@ -12,22 +12,22 @@ export default function Home() {
   return (
     <main className="w-full h-full bg-[#030014]">
       <div className="flex flex-col md:gap-20">
-        {/* 1. Hero — first impression, headline + CV button */}
+        {/* 1. Hero  first impression, headline + CV button */}
         <Hero />
 
-        {/* 2. About — who you are, photo, stats, bio */}
+        {/* 2. About  who you are, photo, stats, bio */}
         <About />
 
-        {/* 3. Skills — tech stack icons */}
+        {/* 3. Skills  tech stack icons */}
         <Skills />
 
-        {/* 4. Experience — education & project timeline */}
+        {/* 4. Experience  education & project timeline */}
         <Experience />
 
-        {/* 5. Projects — portfolio of work with tech badges */}
+        {/* 5. Projects  portfolio of work with tech badges */}
         <Projects />
 
-        {/* 6. Contact — form */}
+        {/* 6. Contact  form */}
         <Contact />
 
         <Footer />

@@ -9,6 +9,7 @@ const bundleAnalyzer = withBundleAnalyzer({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Other Next.js configurations
+  turbopack: {},
 
   webpack: (config) => {
     // Modify the Webpack configuration

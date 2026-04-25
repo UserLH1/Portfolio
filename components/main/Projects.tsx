@@ -11,12 +11,12 @@ const Projects = () => {
         My Projects
       </h2>
       <p className="text-gray-400 text-center mb-10 max-w-xl px-4">
-        A selection of projects I&apos;ve built — from full-stack apps to APIs
+        A selection of projects I&apos;ve built  from full-stack apps to APIs
         and tools. Each one taught me something new.
       </p>
 
       {/* 3-column grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full px-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14 w-full px-10">
         {Projects_data.map((project) => (
           <AnimatedCard
             key={project.title}

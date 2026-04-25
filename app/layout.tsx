@@ -2,17 +2,12 @@
 
 import Navbar from "@/components/main/Navbar";
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import StarBackgroundWrapper from "@/components/ui/StarBackgroundWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
-
-const StarsCanvas = dynamic(() => import("@/components/ui/StarBackground"), {
-  ssr: false,
-  loading: () => null,
-});
 
 // ─────────────────────────────────────────────
 // TODO: Update the siteUrl if your domain changes
@@ -76,7 +71,7 @@ export const viewport = {
 };
 
 // ─────────────────────────────────────────────
-// JSON-LD structured data — helps Google understand you are a person
+// JSON-LD structured data  helps Google understand you are a person
 // TODO: Update jobTitle, knowsAbout, alumniOf, and sameAs with your real links
 // ─────────────────────────────────────────────
 const jsonLd = {
@@ -145,7 +140,7 @@ export default function RootLayout({
             </Script>
           </>
         )}
-        <StarsCanvas />
+        <StarBackgroundWrapper />
         <Navbar />
         {children}
       </body>
