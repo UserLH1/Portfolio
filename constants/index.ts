@@ -164,7 +164,7 @@ export const Timeline_data: TimelineItem[] = [
     title: "Founder & Full Stack Engineer",
     institution: "Cortix",
     description:
-      "Founded and developed a B2B SaaS. Managed full product lifecycle: from initial architecture (NestJS/Next.js) to cloud deployment, CI/CD, payment integration (Stripe), and successful market launch.",
+      "Founded and developed a SaaS. Managed full product lifecycle: from initial architecture (FastAPI/Next.js) to cloud deployment, CI/CD, payment integration (Stripe), and successful market launch.",
     type: "work",
   },
   {
